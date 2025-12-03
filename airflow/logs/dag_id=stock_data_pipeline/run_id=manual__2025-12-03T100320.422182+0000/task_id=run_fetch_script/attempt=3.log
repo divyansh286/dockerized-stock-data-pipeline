@@ -1,0 +1,25 @@
+[2025-12-03T10:13:26.618+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-03T10:13:26.681+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_data_pipeline.run_fetch_script manual__2025-12-03T10:03:20.422182+00:00 [queued]>
+[2025-12-03T10:13:26.693+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_data_pipeline.run_fetch_script manual__2025-12-03T10:03:20.422182+00:00 [queued]>
+[2025-12-03T10:13:26.695+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2025-12-03T10:13:26.716+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): run_fetch_script> on 2025-12-03 10:03:20.422182+00:00
+[2025-12-03T10:13:26.727+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'stock_data_pipeline', 'run_fetch_script', 'manual__2025-12-03T10:03:20.422182+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/stock_pipeline_dag.py', '--cfg-path', '/tmp/tmpojabw1dj']
+[2025-12-03T10:13:26.730+0000] {standard_task_runner.py:91} INFO - Job 16: Subtask run_fetch_script
+[2025-12-03T10:13:26.734+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=208) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-03T10:13:26.735+0000] {standard_task_runner.py:63} INFO - Started process 209 to run task
+[2025-12-03T10:13:26.803+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_data_pipeline.run_fetch_script manual__2025-12-03T10:03:20.422182+00:00 [running]> on host 7ef53a119e0f
+[2025-12-03T10:13:26.944+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='stock_data_pipeline' AIRFLOW_CTX_TASK_ID='run_fetch_script' AIRFLOW_CTX_EXECUTION_DATE='2025-12-03T10:03:20.422182+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-03T10:03:20.422182+00:00'
+[2025-12-03T10:13:26.945+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-03T10:13:26.966+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-03T10:13:26.967+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/airflow/scripts/fetch_and_update.py']
+[2025-12-03T10:13:26.981+0000] {subprocess.py:86} INFO - Output:
+[2025-12-03T10:13:27.818+0000] {subprocess.py:93} INFO - 2025-12-03 10:13:27,818 - INFO - Fetching data for AAPL...
+[2025-12-03T10:13:28.662+0000] {subprocess.py:93} INFO - 2025-12-03 10:13:28,661 - INFO - Data received for AAPL at 2025-12-02 19:55:00
+[2025-12-03T10:13:28.673+0000] {subprocess.py:93} INFO - 2025-12-03 10:13:28,673 - INFO - Connecting to PostgreSQL...
+[2025-12-03T10:13:28.693+0000] {subprocess.py:93} INFO - 2025-12-03 10:13:28,693 - INFO - DB updated successfully.
+[2025-12-03T10:13:28.730+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-03T10:13:28.731+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-03T10:13:28.786+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=stock_data_pipeline, task_id=run_fetch_script, run_id=manual__2025-12-03T10:03:20.422182+00:00, execution_date=20251203T100320, start_date=20251203T101326, end_date=20251203T101328
+[2025-12-03T10:13:28.838+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-12-03T10:13:28.864+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-03T10:13:28.867+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
